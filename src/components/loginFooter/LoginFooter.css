@@ -1,0 +1,17 @@
+.loginFooter {
+    height: 80px;
+    width: 100%;
+
+    background: rgba( 255, 255, 255, 0.25 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-top: 1px solid rgba( 255, 255, 255);
+
+    color: white;
+    font-weight: bold;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
