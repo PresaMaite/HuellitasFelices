@@ -4,22 +4,27 @@ import btnIcon from "./../../assets/btnDecoration/arrowRight.svg";
 
 import { Input } from "../../components/input/Input";
 import { Btn } from "../../components/btn/Btn";
+import { LoginFooter } from "../../components/loginFooter/LoginFooter";
 
 
 export const Login = () => {
     return(
-        <div className="layoutBackground">
-            <img src={logo} alt="" />
+        <div className="loginBackground">
+            <img src={logo} alt="Huellitas Felices" className="loginLogo" />
 
-            <div className="loginStyles">
-                <Input/>
-                <Input/>
+            <div className="formStyles">
+                <div className="loginStyles">
+                    <Input placeholder="usuario" type="text"/>
+                    <Input placeholder="contraseña" type="password"/>
+                </div>
+                <p className="questAlign">¿Has olvidado la contraseña?</p>
             </div>
-            <p>¿Has olvidado la contraseña?</p>
 
             <div className="btnContainer">
                 <Btn text="LOGIN" icon={btnIcon} />
             </div>
+
+            <LoginFooter text="¿No tienes cuenta? Regístrate" />
 
         </div>
     )
