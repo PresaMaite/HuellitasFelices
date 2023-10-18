@@ -12,7 +12,7 @@
     top: 0;
   }
   
-  .nav2-item {
+  .nav2Item {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -20,9 +20,8 @@
     color: rgba(0, 0, 0, 0.75);
   }
   
-  .nav-item span {
+  .navItem span {
     display: block;
-    font-family: Poppins;
     font-size: 10px;
     font-style: normal;
     font-weight: 250;
@@ -32,6 +31,6 @@
     align-self: flex-end;
   }
 
-  .nav2-item.activo img {
+  .nav2Item.activo img {
     filter: invert(37%) sepia(98%) saturate(746%) hue-rotate(338deg) brightness(102%) contrast(95%);
   }

@@ -15,16 +15,16 @@ function Navbar2() {
 
   return (
     <div className="navbar2">
-      <div className={`nav2-item ${activo === 1 ? 'activo' : ''}`} onClick={() => handleIconClick(1)}>
-        <img src={home} alt="home" />
+      <div className={`nav2Item ${activo === 1 ? 'activo' : ''}`} onClick={() => handleIconClick(1)}>
+        <img src={home} alt="home" height="32px" width="32px"/>
         <span>Inicio</span>
       </div>
-      <div className={`nav2-item ${activo === 2 ? 'activo' : ''}`} onClick={() => handleIconClick(2)}>
+      <div className={`nav2Item ${activo === 2 ? 'activo' : ''}`} onClick={() => handleIconClick(2)}>
         <img src={chat} alt="chat" />
         <span>Chat</span>
       </div>
-      <div className={`nav2-item ${activo === 3 ? 'activo' : ''}`} onClick={() => handleIconClick(3)}>
-        <img src={heart} alt="heart" />
+      <div className={`nav2Item ${activo === 3 ? 'activo' : ''}`} onClick={() => handleIconClick(3)}>
+        <img src={heart} alt="heart" height="32px" width="32px"/>
         <span>Donar</span>
       </div>
     </div>
