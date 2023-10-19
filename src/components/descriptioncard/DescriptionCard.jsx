@@ -1,5 +1,7 @@
 import './DescriptionCard.css';
 
+import PropTypes from 'prop-types';
+
 import { Btn } from "./../btn/Btn";
 
 import Phone from '../../assets/descriptionCard/Telephone.svg';
@@ -7,17 +9,17 @@ import Female from '../../assets/descriptionCard/female.png';
 
 
 
-function DescriptionCard(gender) {
-    const mostrarImagen1 = gender.mostrarImagen1;
+function DescriptionCard({name, breed, gender, description}) {
+    
     return (
       <div>
         <div className='card1'>
             <div>
-            <p className='name'>Cleo</p>
-            <p className='breed'>Común Europeo</p>
+            <p className='name'>{name}</p>
+            <p className='breed'>{breed}</p>
             </div>
           
-            {mostrarImagen1 ? (
+            {gender === 'female' ? (
                 <img src={Female} alt="Female" />
                 ) : (
                 <img src={Female} alt="Male" />
@@ -25,12 +27,19 @@ function DescriptionCard(gender) {
         </div>
   
         <div className='card2'>
-          <p className='description'>Es una gata juguetona y cariñosa, le encanta que le rasquen la barriga.</p>
+          <p className='description'>{description}</p>
           <Btn text="CONTACTAR" icon={Phone}/>
           
         </div>
       </div>
     );
   }
+
+  DescriptionCard.propTypes = {
+    name: PropTypes.string.isRequired,
+    breed: PropTypes.string.isRequired,
+    gender: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired
+  };
   
   export default DescriptionCard;
