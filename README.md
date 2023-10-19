@@ -1,6 +1,6 @@
 <h1 align="center"> Huellitas Felices; adopta una huellita </h1>
 
-![Huellitas Felices](https://github.com/PresaMaite/HuellitasFelices/blob/dev/src/assets/images/LogoWhite.svg)
+![Huellitas Felices](/src/assets/images/LogoWhite.svg)
 
 ![Badge en Desarollo](https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green)
 
