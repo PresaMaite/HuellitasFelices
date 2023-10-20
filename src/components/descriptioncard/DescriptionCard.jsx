@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Btn } from "./../btn/Btn";
 
 import Phone from '../../assets/descriptionCard/Telephone.svg';
-import Female from '../../assets/descriptionCard/female.png';
+import Female from '../../assets/descriptionCard/female.svg';
 
 
 
