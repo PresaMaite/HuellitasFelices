@@ -1,3 +1,7 @@
+.adminLayoutTitle {
+    margin: 32px;
+}
+
 .adminForm {
     display: flex;
     flex-direction: column;

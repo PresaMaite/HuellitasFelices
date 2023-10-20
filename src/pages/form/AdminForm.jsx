@@ -41,6 +41,7 @@ export const AdminForm = () => {
 
   return (
     <>
+        <h2 className="adminLayoutTitle" >Nueva mascota</h2>
         <form onSubmit={handleSubmit} className="adminForm">
         <Input
             type="text"
@@ -58,13 +59,17 @@ export const AdminForm = () => {
             onChange={(e) => setAnimal({ ...animal, type: e.target.value })}
         />
 
-        <Input
-            type="text"
-            name="gender"
-            placeholder="Sexo"
-            value={animal.gender}
-            onChange={(e) => setAnimal({ ...animal, gender: e.target.value })}
-        />
+        <select
+          type="text"
+          name="gender"
+          placeholder="Sexo"
+          value={animal.gender}
+          onChange={(e) => setAnimal({ ...animal, gender: e.target.value })}
+          className='loginInput'
+        >
+            <option value="female">Hembra</option>
+            <option value="male">Macho</option>
+        </select>
 
         <Input
             type="text"
