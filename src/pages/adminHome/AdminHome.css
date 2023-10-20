@@ -1,0 +1,7 @@
+.adminBtnContainer {
+    margin: 0 32px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
