@@ -1,0 +1,47 @@
+.card1 {
+    background-color: #E7E0DA;
+    border-radius: 24px 24px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 24px;
+
+}
+
+.card2 {
+    background-color: white;
+    padding: 24px;
+}
+
+.name {
+    color: rgba(0, 0, 0, 0.75);
+    text-align: left;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1.6px;
+}
+
+.breed {
+    color: #8B5A2B;
+    text-align: left;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+
+.description {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    margin-bottom: 24px;
+}
+
