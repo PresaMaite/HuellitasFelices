@@ -1,7 +1,7 @@
 import "./AdminForm.css";
 import { useState } from "react";
-import { Input } from "../input/Input";
-import { Btn } from "../btn/Btn";
+import { Input } from "../../components/input/Input";
+import { Btn } from "../../components/btn/Btn";
 
 export const AdminForm = () => {
   const [animal, setAnimal] = useState({

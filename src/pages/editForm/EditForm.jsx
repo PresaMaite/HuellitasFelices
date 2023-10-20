@@ -1,11 +1,12 @@
 import "./../form/AdminForm.css";
+import "./EditForm.css";
 
 import { useState } from "react";
 import { Input } from "../../components/input/Input";
 import { Btn } from "../../components/btn/Btn";
 
 export const EditForm = () => {
-  const animalID = 9;
+  const animalID = 3;
   const existingAnimals = JSON.parse(localStorage.getItem("animals")) || [];
   const selectedAnimal = existingAnimals[animalID];
 
@@ -24,6 +25,19 @@ export const EditForm = () => {
       const imageUrl = URL.createObjectURL(selectedImage);
       setAnimal({ ...animal, image: imageUrl });
     }
+  };
+
+  const handleDelete = () => {
+    const updatedAnimals = existingAnimals.filter((animal, index) => index !== animalID);
+    localStorage.setItem("animals", JSON.stringify(updatedAnimals));
+
+    setAnimal({
+      name: "",
+      type: "",
+      gender: "",
+      description: "",
+      image: ""
+    });
   };
 
   const handleSubmit = (e) => {
@@ -88,6 +102,7 @@ export const EditForm = () => {
 
         <div className="adminFormBtn">
           <Btn type="submit" text="Actualizar mascota" />
+          <Btn type="submit" text="Eliminar mascota" onClick={handleDelete} isDelete={true}/>
         </div>
       </form>
     </>
