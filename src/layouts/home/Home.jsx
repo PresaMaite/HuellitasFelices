@@ -6,9 +6,9 @@ import Navbar2 from '../../components/navbar2/Navbar2';
 
 import './Home.css'
 
-import Perrin from '../../assets/homePhotos/perrin.png';
+import Perrin from '../../assets/homePhotos/perrin.jpg';
 import Gatin from '../../assets/homePhotos/gatin.png';
-import Perrin2 from '../../assets/homePhotos/perrin2.png';
+import Perrin2 from '../../assets/homePhotos/perrin2.jpg';
 import Gatin2 from '../../assets/homePhotos/gatin2.png';
 
 
