@@ -6,6 +6,7 @@ import { Btn } from "./../btn/Btn";
 
 import Phone from '../../assets/descriptionCard/Telephone.svg';
 import Female from '../../assets/descriptionCard/female.svg';
+import Male from '../../assets/descriptionCard/male.svg';
 
 
 
@@ -22,7 +23,7 @@ function DescriptionCard({name, breed, gender, description, redirectToWhatsApp})
             {gender === 'female' ? (
                 <img src={Female} alt="Female" />
                 ) : (
-                <img src={Female} alt="Male" />
+                <img src={Male} alt="Male" width='40px' height='60px' />
             )}
         </div>
   
