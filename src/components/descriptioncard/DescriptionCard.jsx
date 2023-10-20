@@ -9,7 +9,7 @@ import Female from '../../assets/descriptionCard/female.svg';
 
 
 
-function DescriptionCard({name, breed, gender, description}) {
+function DescriptionCard({name, breed, gender, description, redirectToWhatsApp}) {
     
     return (
       <div>
@@ -28,7 +28,7 @@ function DescriptionCard({name, breed, gender, description}) {
   
         <div className='card2'>
           <p className='description'>{description}</p>
-          <Btn text="CONTACTAR" icon={Phone}/>
+          <Btn text="CONTACTAR" icon={Phone} onClick={() => redirectToWhatsApp()} />
           
         </div>
       </div>
@@ -39,7 +39,8 @@ function DescriptionCard({name, breed, gender, description}) {
     name: PropTypes.string.isRequired,
     breed: PropTypes.string.isRequired,
     gender: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired
+    description: PropTypes.string.isRequired,
+    redirectToWhatsApp: PropTypes.func.isRequired,
   };
   
   export default DescriptionCard;

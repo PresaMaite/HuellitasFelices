@@ -4,9 +4,9 @@ import "./Btn.css";
 import decoration from "./../../assets/btnDecoration/btnDecoration.svg";
  
  
-export const Btn = ({text, icon, type}) => {
+export const Btn = ({text, icon, type, onClick}) => {
     return(
-        <button className='btnStyles' type={type}>
+        <button className='btnStyles' type={type} onClick={onClick}>
             <div className='btnDecoration' >
                 <img src={decoration} alt="" />
                 <img src={icon} alt="" className='imgAbsolute' />
@@ -20,5 +20,6 @@ export const Btn = ({text, icon, type}) => {
 Btn.propTypes = {
     text: PropTypes.string,
     icon: PropTypes.string,
-    type: PropTypes.string
+    type: PropTypes.string,
+    onClick: PropTypes.func.isRequired
 }
