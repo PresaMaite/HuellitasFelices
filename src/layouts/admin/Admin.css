@@ -1,0 +1,7 @@
+.adminOutlet {
+    min-height: calc(100vh - 57px);
+
+    background-color: #E7E0DA;
+
+    padding-top: 1px;
+}

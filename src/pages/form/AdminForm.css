@@ -1,0 +1,24 @@
+.adminLayoutTitle {
+    margin: 32px;
+}
+
+.adminForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    margin: 0 32px;
+}
+
+.adminFormBtn {
+    position: absolute;
+    bottom: 0;
+
+    width: -webkit-fill-available;
+    width: fill-available;
+
+    margin: 32px;
+
+}

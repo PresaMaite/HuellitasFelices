@@ -4,9 +4,9 @@ import "./Btn.css";
 import decoration from "./../../assets/btnDecoration/btnDecoration.svg";
  
  
-export const Btn = ({text, icon}) => {
+export const Btn = ({text, icon, type, onClick, isDelete}) => {
     return(
-        <button className='btnStyles'>
+        <button className={`btnStyles ${isDelete ? "btnRed" : "btnBrown"}`} type={type} onClick={onClick}>
             <div className='btnDecoration' >
                 <img src={decoration} alt="" />
                 <img src={icon} alt="" className='imgAbsolute' />
@@ -19,5 +19,8 @@ export const Btn = ({text, icon}) => {
 
 Btn.propTypes = {
     text: PropTypes.string,
-    icon: PropTypes.string
+    icon: PropTypes.string,
+    type: PropTypes.string,
+    onClick: PropTypes.any,
+    isDelete: PropTypes.bool
 }

@@ -1,0 +1,12 @@
+.animalCard {
+    width: 154px;
+    height: 154px;
+    border-radius: 16px; 
+    margin: 10px; 
+  }
+
+  .animalCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
