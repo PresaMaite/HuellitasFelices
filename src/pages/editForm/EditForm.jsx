@@ -1,12 +1,15 @@
 import "./../form/AdminForm.css";
 import "./EditForm.css";
 
+import { Link } from "react-router-dom";
+
 import { useState } from "react";
 import { Input } from "../../components/input/Input";
 import { Btn } from "../../components/btn/Btn";
 
+
 export const EditForm = () => {
-  const animalID = 3;
+  const animalID = 0;
   const existingAnimals = JSON.parse(localStorage.getItem("animals")) || [];
   const selectedAnimal = existingAnimals[animalID];
 
@@ -52,7 +55,11 @@ export const EditForm = () => {
 
   return (
     <>
-        <h2 className="adminLayoutTitle" >Editar datos mascota</h2>
+      <Link>
+        <p className="adminBackBtn"> { `< Volver` } </p>
+      </Link>
+
+      <h2 className="adminLayoutTitle" >Editar datos mascota</h2>
 
       <form onSubmit={handleSubmit} className="adminForm">
         <Input

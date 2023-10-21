@@ -3,3 +3,17 @@
     flex-direction: column;
     gap: 24px;
 }
+
+.adminBackBtn {
+    height: 48px;
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+
+    margin-left: 32px;
+    margin-top: 16px;
+
+    color: #8B5A2B;
+    font-weight: bold;
+}

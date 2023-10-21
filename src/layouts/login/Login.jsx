@@ -1,4 +1,7 @@
 import "./Login.css";
+
+import { Link } from "react-router-dom";
+
 import logo from "./../../assets/images/LogoWhite.svg";
 import btnIcon from "./../../assets/btnDecoration/arrowRight.svg";
 
@@ -21,10 +24,14 @@ export const Login = () => {
             </div>
 
             <div className="btnContainer">
-                <Btn text="LOGIN" icon={btnIcon} />
+                <Link to="/admin/home">
+                    <Btn text="LOGIN" icon={btnIcon} />
+                </Link>
             </div>
 
-            <LoginFooter text="¿No tienes cuenta? Regístrate" />
+            <Link to="/home">
+                <LoginFooter text="¿No tienes cuenta? Regístrate" />
+            </Link>
 
         </div>
     )

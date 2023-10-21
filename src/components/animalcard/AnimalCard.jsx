@@ -12,7 +12,7 @@ function AnimalCard({ name, photo }) {
 
 AnimalCard.propTypes = {
     name: PropTypes.string.isRequired,
-    photo: PropTypes.string.isRequired
+    photo: PropTypes.any.isRequired
 };
 
 export default AnimalCard;
