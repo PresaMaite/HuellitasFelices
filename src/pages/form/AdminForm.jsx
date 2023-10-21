@@ -1,7 +1,11 @@
 import "./AdminForm.css";
+
+import { Link } from "react-router-dom";
+
 import { useState } from "react";
 import { Input } from "../../components/input/Input";
 import { Btn } from "../../components/btn/Btn";
+
 
 export const AdminForm = () => {
   const [animal, setAnimal] = useState({
@@ -41,6 +45,10 @@ export const AdminForm = () => {
 
   return (
     <>
+        <Link to="/admin/home">
+          <p className="adminBackBtn"> { `< Volver` } </p>
+        </Link>
+
         <h2 className="adminLayoutTitle" >Nueva mascota</h2>
         <form onSubmit={handleSubmit} className="adminForm">
         <Input
