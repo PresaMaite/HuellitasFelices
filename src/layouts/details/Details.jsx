@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 
@@ -17,12 +19,25 @@ function Details () {
 
 
     const redirectToWhatsApp = () => {
+        Swal.fire({
+            title: 'Se abrirá una nueva ventana. ¿Estás seguro?',
+            showDenyButton: true,
+            showCancelButton: false,
+            confirmButtonText: 'Continuar',
+            denyButtonText: `Cancelar`,
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                const phoneNumber = '0034611404368'; 
+                const message = `Hola, me encantaría adoptar a ${animal.name}#${animalID}. ¿Puedes ayudarme?`; // Mensaje opcional
+            
+                const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+                window.open(whatsappLink, '_blank');
+              
+            }
+          })
 
-        const phoneNumber = '0034611404368'; 
-        const message = `Hola, me encantaría adoptar a ${animal.name}#${animalID}. ¿Puedes ayudarme?`; // Mensaje opcional
-    
-        const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
-        window.open(whatsappLink, '_blank');
+
       };
 
 
