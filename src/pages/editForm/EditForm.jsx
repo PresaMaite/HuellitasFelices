@@ -45,7 +45,7 @@ export const EditForm = () => {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        Swal.fire('Borrado!', '', 'success')
+        Swal.fire('Borrado!', '', 'success');
         const updatedAnimals = existingAnimals.filter((animal, index) => index !== animalID);
         localStorage.setItem("animals", JSON.stringify(updatedAnimals));
     

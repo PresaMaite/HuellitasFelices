@@ -1,4 +1,5 @@
 import "./AdminForm.css";
+import Swal from 'sweetalert2';
 
 import { Link } from "react-router-dom";
 
@@ -41,6 +42,8 @@ export const AdminForm = () => {
       description: "",
       image: ""
     });
+
+    Swal.fire('Añadido! :)', '', 'success')
   };
 
   return (
