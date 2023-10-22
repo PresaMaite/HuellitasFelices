@@ -1,7 +1,8 @@
 import "./../form/AdminForm.css";
 import "./EditForm.css";
 
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 import { useState } from "react";
 import { Input } from "../../components/input/Input";
@@ -12,6 +13,8 @@ export const EditForm = () => {
   const params = useParams();
   const animalID = parseInt(params.index);
 
+  const history = useNavigate();
+  console.log('his',history)
   const existingAnimals = JSON.parse(localStorage.getItem("animals")) || [];
   const selectedAnimal = existingAnimals[animalID];
 
@@ -33,25 +36,53 @@ export const EditForm = () => {
   };
 
   const handleDelete = () => {
-    const updatedAnimals = existingAnimals.filter((animal, index) => index !== animalID);
-    localStorage.setItem("animals", JSON.stringify(updatedAnimals));
+    Swal.fire({
+      title: '¿Seguro que quieres borrarlo?',
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: 'Borrar',
+      denyButtonText: `Cancelar`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire('Borrado!', '', 'success')
+        const updatedAnimals = existingAnimals.filter((animal, index) => index !== animalID);
+        localStorage.setItem("animals", JSON.stringify(updatedAnimals));
+    
+        setAnimal({
+          name: "",
+          type: "",
+          gender: "",
+          description: "",
+          image: ""
+        });
 
-    setAnimal({
-      name: "",
-      type: "",
-      gender: "",
-      description: "",
-      image: ""
-    });
+        history("/admin/gallery");
+      }
+    })
+
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const updatedAnimals = [...existingAnimals];
-    updatedAnimals[animalID] = animal;
-
-    localStorage.setItem("animals", JSON.stringify(updatedAnimals));
+    Swal.fire({
+      title: '¿Quieres guardar los cambios?',
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: 'Guardar',
+      denyButtonText: `Cancelar`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire('Guardado!', '', 'success')
+        const updatedAnimals = [...existingAnimals];
+        updatedAnimals[animalID] = animal;
+    
+        localStorage.setItem("animals", JSON.stringify(updatedAnimals));
+      }
+    })
+    
 
   };
 
@@ -112,7 +143,7 @@ export const EditForm = () => {
 
         <div className="adminFormBtn">
           <Btn type="submit" text="Actualizar mascota" />
-          <Btn type="submit" text="Eliminar mascota" onClick={handleDelete} isDelete={true}/>
+          <Btn type="button" text="Eliminar mascota" onClick={handleDelete} isDelete={true}/>
         </div>
       </form>
     </>
