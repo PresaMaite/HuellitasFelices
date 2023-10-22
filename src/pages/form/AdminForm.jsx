@@ -75,6 +75,7 @@ export const AdminForm = () => {
           onChange={(e) => setAnimal({ ...animal, gender: e.target.value })}
           className='loginInput'
         >
+            <option value="">Seleciona el sexo</option>
             <option value="female">Hembra</option>
             <option value="male">Macho</option>
         </select>

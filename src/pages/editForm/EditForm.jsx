@@ -1,7 +1,7 @@
 import "./../form/AdminForm.css";
 import "./EditForm.css";
 
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { useState } from "react";
 import { Input } from "../../components/input/Input";
@@ -9,7 +9,9 @@ import { Btn } from "../../components/btn/Btn";
 
 
 export const EditForm = () => {
-  const animalID = 0;
+  const params = useParams();
+  const animalID = parseInt(params.index);
+
   const existingAnimals = JSON.parse(localStorage.getItem("animals")) || [];
   const selectedAnimal = existingAnimals[animalID];
 
@@ -55,7 +57,7 @@ export const EditForm = () => {
 
   return (
     <>
-      <Link>
+      <Link to="/admin/gallery">
         <p className="adminBackBtn"> { `< Volver` } </p>
       </Link>
 
@@ -86,6 +88,7 @@ export const EditForm = () => {
           onChange={(e) => setAnimal({ ...animal, gender: e.target.value })}
           className='loginInput'
         >
+            <option value="">Seleciona el sexo</option>
             <option value="female">Hembra</option>
             <option value="male">Macho</option>
         </select>
