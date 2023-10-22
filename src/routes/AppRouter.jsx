@@ -6,6 +6,7 @@ import { Admin } from "../layouts/admin/Admin";
 import { AdminHome } from "../pages/adminHome/AdminHome";
 import { AdminForm } from "../pages/form/AdminForm";
 import { EditForm } from "../pages/editForm/EditForm";
+import { AdminSearch } from "../pages/adminSearch/AdminSearch";
 
 import Home from "../layouts/home/Home";
 
@@ -23,8 +24,8 @@ export const AppRouter = () => (
             <Route path="/admin" element={<Admin />} >
                 <Route path="home" element={<AdminHome />} ></Route>
                 <Route path="form" element={<AdminForm />} ></Route>
-                {/* <Route path="gallery/:index" element={<AdminGallery />} ></Route> */}
-                <Route path="editForm" element={<EditForm />} ></Route>
+                <Route path="gallery" element={<AdminSearch />} ></Route>
+                <Route path="editForm/:index" element={<EditForm />} ></Route>
             </Route>
 
             <Route path="/home" element={<Home />} >

@@ -18,7 +18,7 @@ export const AdminHome = () => {
           </Link>
           
 
-          <Link to="/admin/editForm">
+          <Link to="/admin/gallery">
             <AdminBtn text="Galería de animales" />
           </Link>
             
