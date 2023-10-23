@@ -17,6 +17,15 @@
   color: #fff;
 }
 
+#animals-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.animal {
+  width: 50%;
+}
+
 /* #buttons {
     
   width: 70px;

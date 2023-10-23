@@ -1,32 +1,37 @@
 import "./BtnPetSelect.css";
 import React, { useState } from "react";
 
-function BtnPetSelect({animals}) {
-  const [selectedAnimals, setSelectedAnimals] = useState(animals);
-  console.log(selectedAnimals);
-  console.log(animals);
-
- 
-
-  //  BtnPetSelect = () => {
-  //   setIsActive(!isActive);
-  //   props.onClick(); // Llama a la función `onClick` proporcionada por el componente padre
-  // };
+function BtnPetSelect({ animals }) {
+  const [data, setData] = useState({
+    selectedAnimals: animals,
+    selected: "all",
+  });
+  console.log(data);
 
   const selectAll = () => {
     console.log("selecting all");
+    setData({
+      selectedAnimals: animals,
+      selected: "all",
+    });
   };
 
   const selectCats = () => {
     console.log("selecting cats");
-    setSelectedAnimals (animals.filter((animal) => animal.type === "CAT"));
-    console.log("Selected cats: ", selectedAnimals);
+    setData({
+      selectedAnimals: animals.filter((animal) => animal.type === "CAT"),
+      selected: "cats",
+    });
+    console.log("Selected cats: ", data.selectedAnimals);
   };
 
   const selectDogs = () => {
     console.log("selecting dogs");
-    setSelectedAnimals (animals.filter((animal) => animal.type === "DOG"));
-    console.log("Selected cats: ", selectedAnimals);
+    setData({
+      selectedAnimals: animals.filter((animal) => animal.type === "DOG"),
+      selected: "dogs",
+    });
+    console.log("Selected dogs: ", data.selectedAnimals);
   };
 
   return (
@@ -34,27 +39,26 @@ function BtnPetSelect({animals}) {
       <div id="buttons">
         <button
           onClick={selectAll}
-          className="active"
-         
+          className={data.selected == "all" ? "active" : ""}
         >
           Todos
         </button>
         <button
           onClick={selectCats}
-         
+          className={data.selected == "cats" ? "active" : ""}
         >
           Gatos
         </button>
         <button
           onClick={selectDogs}
-         
+          className={data.selected == "dogs" ? "active" : ""}
         >
           Perros
         </button>
       </div>
       <div id="animals-list">
-        {selectedAnimals.map((animal, index) => (
-          <div key={index}>{animal.description}</div>
+        {data.selectedAnimals.map((animal, index) => (
+          <img src={animal.image} className="animal" key={index} />
         ))}
       </div>
     </div>
