@@ -3,23 +3,35 @@ import PropTypes from 'prop-types';
 
 import Lottie from "lottie-react";
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 import Navbar from '../../components/navbar/Navbar'; 
 import AnimalCard from '../../components/animalcard/AnimalCard'; 
 import Navbar2 from '../../components/navbar2/Navbar2'; 
+import BtnPetSelect from '../../components/BtnPetSelect/BtnPetSelect';
 
 import huellitasAnimation from "./../../assets/animations/huellitas.json";
-import { useState } from 'react';
+
+
+
 
 function Home() {
   const existingAnimals = JSON.parse(localStorage.getItem("animals")) || [];
   const lastAnimals = existingAnimals.slice(existingAnimals.length-2, existingAnimals.length);
 
 
-const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   setTimeout(() => {
     setIsLoading(false);
-  }, 5000);
+  }, 3000);
+
+  const [filter, setFilter] = useState(existingAnimals);
+
+  let filterCallback = (animalFilter) => {
+    setFilter(animalFilter);
+  }
+
+  
   
   return (
     <div className="home">
@@ -37,6 +49,8 @@ const [isLoading, setIsLoading] = useState(true);
 
 
             <p className='hometext'>Adoptar una huellita</p>
+              <BtnPetSelect animals={existingAnimals} filterCallback={filterCallback} />
+            
 
             <div className='animalsContainer animalContainerMargin'>
               {(isLoading || !existingAnimals) && 
@@ -44,7 +58,7 @@ const [isLoading, setIsLoading] = useState(true);
               }
 
               {(!isLoading && existingAnimals) && 
-                existingAnimals.map((animal, index) => (
+                filter.map((animal, index) => (
                   <Link to={`/details/${index}`} key={index}>
                     <AnimalCard name={animal.name} photo={animal.image} />
                   </Link>
