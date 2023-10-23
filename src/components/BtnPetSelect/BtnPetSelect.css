@@ -1,6 +1,7 @@
 #buttons {
   width: 100%;
   display: flex;
+  margin: 24px 0;
 }
 
 #buttons button {
@@ -17,21 +18,6 @@
   color: #fff;
 }
 
-#animals-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .animal {
   width: 50%;
 }
-
-/* #buttons {
-    
-  width: 70px;
-  height: 30px;
-  background-color: rgb(176, 77, 77);
-  border-color: none;
-  border-radius: 20px;
-  border: 0;
-} */

@@ -11,6 +11,7 @@ import { Btn } from "../../components/btn/Btn";
 export const AdminForm = () => {
   const [animal, setAnimal] = useState({
     name: "",
+    animal: "",
     type: "",
     gender: "",
     description: "",
@@ -37,6 +38,7 @@ export const AdminForm = () => {
 
     setAnimal({
       name: "",
+      animal: "",
       type: "",
       gender: "",
       description: "",
@@ -69,7 +71,19 @@ export const AdminForm = () => {
             value={animal.type}
             onChange={(e) => setAnimal({ ...animal, type: e.target.value })}
         />
-
+        <select
+          type="text"
+          name="animal"
+          placeholder="animal"
+          value={animal.animal}
+          onChange={(e) => setAnimal({ ...animal, animal: e.target.value })}
+          className='loginInput'
+        >
+            <option value="">Seleciona el tipo de animal</option>
+            <option value="CAT">Gato</option>
+            <option value="DOG">Perro</option>
+        </select>
+        
         <select
           type="text"
           name="gender"

@@ -20,6 +20,7 @@ export const EditForm = () => {
 
   const [animal, setAnimal] = useState({
     name: selectedAnimal.name || "",
+    animal: selectedAnimal.animal || "",
     type: selectedAnimal.type || "",
     gender: selectedAnimal.gender || "",
     description: selectedAnimal.description || "",
@@ -51,6 +52,7 @@ export const EditForm = () => {
     
         setAnimal({
           name: "",
+          animal: "",
           type: "",
           gender: "",
           description: "",
@@ -110,6 +112,19 @@ export const EditForm = () => {
           value={animal.type}
           onChange={(e) => setAnimal({ ...animal, type: e.target.value })}
         />
+
+        <select
+          type="text"
+          name="animal"
+          placeholder="animal"
+          value={animal.animal}
+          onChange={(e) => setAnimal({ ...animal, animal: e.target.value })}
+          className='loginInput'
+        >
+            <option value="">Seleciona el tipo de animal</option>
+            <option value="CAT">Gato</option>
+            <option value="DOG">Perro</option>
+        </select>
 
         <select
           type="text"

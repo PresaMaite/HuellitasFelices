@@ -1,7 +1,10 @@
 import "./BtnPetSelect.css";
-import React, { useState } from "react";
+import PropTypes from 'prop-types';
 
-function BtnPetSelect({ animals }) {
+import { useState } from "react";
+
+
+function BtnPetSelect({ animals, filterCallback }) {
   const [data, setData] = useState({
     selectedAnimals: animals,
     selected: "all",
@@ -14,24 +17,27 @@ function BtnPetSelect({ animals }) {
       selectedAnimals: animals,
       selected: "all",
     });
+    filterCallback(animals);
   };
 
   const selectCats = () => {
     console.log("selecting cats");
     setData({
-      selectedAnimals: animals.filter((animal) => animal.type === "CAT"),
+      selectedAnimals: animals.filter((animal) => animal.animal === "CAT"),
       selected: "cats",
     });
     console.log("Selected cats: ", data.selectedAnimals);
+    filterCallback(animals.filter((animal) => animal.animal === "CAT"));
   };
 
   const selectDogs = () => {
     console.log("selecting dogs");
     setData({
-      selectedAnimals: animals.filter((animal) => animal.type === "DOG"),
+      selectedAnimals: animals.filter((animal) => animal.animal === "DOG"),
       selected: "dogs",
     });
     console.log("Selected dogs: ", data.selectedAnimals);
+    filterCallback(animals.filter((animal) => animal.animal === "DOG"));
   };
 
   return (
@@ -56,13 +62,13 @@ function BtnPetSelect({ animals }) {
           Perros
         </button>
       </div>
-      <div id="animals-list">
-        {data.selectedAnimals.map((animal, index) => (
-          <img src={animal.image} className="animal" key={index} />
-        ))}
-      </div>
     </div>
   );
 }
+
+BtnPetSelect.propTypes = {
+  animals: PropTypes.any,
+  filterCallback: PropTypes.any
+};
 
 export default BtnPetSelect;
