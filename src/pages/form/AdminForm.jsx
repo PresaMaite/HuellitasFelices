@@ -1,7 +1,12 @@
 import "./AdminForm.css";
+import Swal from 'sweetalert2';
+
+import { Link } from "react-router-dom";
+
 import { useState } from "react";
 import { Input } from "../../components/input/Input";
 import { Btn } from "../../components/btn/Btn";
+
 
 export const AdminForm = () => {
   const [animal, setAnimal] = useState({
@@ -37,10 +42,16 @@ export const AdminForm = () => {
       description: "",
       image: ""
     });
+
+    Swal.fire('Añadido! :)', '', 'success')
   };
 
   return (
     <>
+        <Link to="/admin/home">
+          <p className="adminBackBtn"> { `< Volver` } </p>
+        </Link>
+
         <h2 className="adminLayoutTitle" >Nueva mascota</h2>
         <form onSubmit={handleSubmit} className="adminForm">
         <Input
@@ -67,6 +78,7 @@ export const AdminForm = () => {
           onChange={(e) => setAnimal({ ...animal, gender: e.target.value })}
           className='loginInput'
         >
+            <option value="">Seleciona el sexo</option>
             <option value="female">Hembra</option>
             <option value="male">Macho</option>
         </select>

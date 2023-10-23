@@ -1,19 +1,25 @@
+import './Home.css';
 import PropTypes from 'prop-types';
+
+import Lottie from "lottie-react";
+import { Link } from 'react-router-dom';
 
 import Navbar from '../../components/navbar/Navbar'; 
 import AnimalCard from '../../components/animalcard/AnimalCard'; 
 import Navbar2 from '../../components/navbar2/Navbar2'; 
 
-import './Home.css'
-
-import Perrin from '../../assets/homePhotos/perrin.jpg';
-import Gatin from '../../assets/homePhotos/gatin.png';
-import Perrin2 from '../../assets/homePhotos/perrin2.jpg';
-import Gatin2 from '../../assets/homePhotos/gatin2.png';
-
-
+import huellitasAnimation from "./../../assets/animations/huellitas.json";
+import { useState } from 'react';
 
 function Home() {
+  const existingAnimals = JSON.parse(localStorage.getItem("animals")) || [];
+  const lastAnimals = existingAnimals.slice(existingAnimals.length-2, existingAnimals.length);
+
+
+const [isLoading, setIsLoading] = useState(true);
+  setTimeout(() => {
+    setIsLoading(false);
+  }, 5000);
   
   return (
     <div className="home">
@@ -21,17 +27,30 @@ function Home() {
       <div className='homeContent'>
             <p className='hometext'>Nuevas huellitas en adopción</p>
 
-<           div className="animalCardContainer">
-                <AnimalCard photo={Perrin} />
-                <AnimalCard photo={Gatin} />
-
+            <div className='animalsContainer'>
+              {lastAnimals.map((animal, index) => (
+                    <div key={index}>
+                      <AnimalCard name={animal.name} photo={animal.image} />
+                    </div>
+              ))}
             </div>
+
 
             <p className='hometext'>Adoptar una huellita</p>
 
-            <div className="animalCardContainer">
-                <AnimalCard photo={Perrin2} />
-                <AnimalCard photo={Gatin2} />
+            <div className='animalsContainer animalContainerMargin'>
+              {(isLoading || !existingAnimals) && 
+                <Lottie animationData={huellitasAnimation} loop={true} /> 
+              }
+
+              {(!isLoading && existingAnimals) && 
+                existingAnimals.map((animal, index) => (
+                  <Link to={`/details/${index}`} key={index}>
+                    <AnimalCard name={animal.name} photo={animal.image} />
+                  </Link>
+
+                ))
+              }
 
             </div>
         </div>
@@ -43,7 +62,7 @@ function Home() {
 
 AnimalCard.propTypes = {
     
-    photo: PropTypes.string.isRequired
+    photo: PropTypes.any.isRequired
 };
 
 export default Home;
