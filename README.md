@@ -50,11 +50,11 @@ Nuestro proceso de adopción es tan fácil como darle una chuche a un cachorro. 
   
 <h2> 4. 💻 Requisitos :</h2>
   
-...
+Tener Node instalado.
 
   <h2> 5.  🛠️ Abre y ejecuta el Proyecto:</h2>
    
-...
+npm install
 
   <h2> 6. ⚙️ Tecnologías Utilizadas:</h2>
 
@@ -62,8 +62,7 @@ Nuestro proceso de adopción es tan fácil como darle una chuche a un cachorro. 
 
    - 👨‍💻 JavaScript, React
    - ⚙️ HTML
-   - 👁️ CSS, Bootstrap,Ajax
-   - 💽 MySQL, XAMPP
+   - 👁️ CSS
 
    ## Autoras
 
