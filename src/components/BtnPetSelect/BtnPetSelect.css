@@ -1,0 +1,23 @@
+#buttons {
+  width: 100%;
+  display: flex;
+  margin: 24px 0;
+}
+
+#buttons button {
+  flex: 1 0 0;
+  padding: 10px;
+  border-radius: 25px;
+  margin: 0 5px;
+  background-color: transparent;
+  border: none;
+}
+
+.active {
+  background-color: #8b5a2b !important;
+  color: #fff;
+}
+
+.animal {
+  width: 50%;
+}

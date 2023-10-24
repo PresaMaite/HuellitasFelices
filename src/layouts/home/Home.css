@@ -1,0 +1,32 @@
+.homeContent {
+    display: flex;
+    flex-direction: column;
+    padding-left: 24px;
+    padding-top: 37px;
+  }
+  
+.animalCardContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; 
+  }
+
+.hometext {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.8px;
+}
+
+.animalsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.animalContainerMargin {
+  margin-bottom: 124px;
+}

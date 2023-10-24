@@ -1,0 +1,37 @@
+.btnStyles {
+    width: 100%;
+
+    border: 0;
+    border-radius: 32px;
+
+    font-weight: bold;
+    color: #F4F4F4;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btnBrown {
+    background-color: #8B5A2B;
+}
+
+.btnRed {
+    background-color: #8B2B2B;
+}
+
+.btnStyles .btnDecoration {
+    position: relative;
+    height: 48px;
+}
+
+.btnDecoration .imgAbsolute {
+    position: absolute;
+    top: 15%;
+    left: 25%;
+}
+
+.btnStyles .btnText {
+    width: 100%;
+    margin-left: -64px;
+}
